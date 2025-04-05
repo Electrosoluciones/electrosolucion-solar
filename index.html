@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Electrosoluciones Solar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+
+  <header class="bg-yellow-400 text-center p-6">
+    <h1 class="text-3xl font-bold">Electrosoluciones Solar</h1>
+    <p>Soluciones inteligentes con energía solar</p>
+  </header>
+
+  <section class="p-4">
+    <h2 class="text-2xl font-bold mb-4">Catálogo de Productos</h2>
+    <div class="border p-4 mb-4 bg-gray-50 rounded">
+      <h3 class="text-xl font-semibold">Panel Solar 450W</h3>
+      <p>Alta eficiencia, ideal para hogares y comercios.</p>
+    </div>
+    <div class="border p-4 mb-4 bg-gray-50 rounded">
+      <h3 class="text-xl font-semibold">Inversor Híbrido 5kW</h3>
+      <p>Conexión a red y baterías, versatilidad total.</p>
+    </div>
+  </section>
+
+  <section class="p-4 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4">Calcula tu sistema solar</h2>
+    <p>Ingresa tu consumo mensual (en kWh):</p>
+    <input type="number" id="consumo" class="border p-2 mt-2 mb-4 w-full" placeholder="Ej: 300" />
+    <button onclick="calcular()" class="bg-green-600 text-white px-4 py-2 rounded">Calcular</button>
+    <p id="resultado" class="mt-4 font-semibold"></p>
+  </section>
+
+  <section class="p-4">
+    <h2 class="text-2xl font-bold mb-4">Solicita tu cotización</h2>
+    <a href="https://wa.me/573124432606" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded inline-block">
+      📲 Enviar mensaje por WhatsApp
+    </a>
+  </section>
+
+  <script>
+    function calcular() {
+      const consumo = document.getElementById("consumo").value;
+      const paneles = Math.ceil(consumo / 40);
+      document.getElementById("resultado").innerText = 
+        consumo ? `Necesitas aprox. ${paneles} paneles solares.` : "Ingresa un valor válido.";
+    }
+  </script>
+
+</body>
+</html>
